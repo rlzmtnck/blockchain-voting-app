@@ -1,6 +1,8 @@
 //Karena ini adalah domain yang berada pada repositories query, maka isinya hanya bisa get data
 const { pool } = require('../../../helpers/dbConfig')
 require('pg')
+
+
 function isValidEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
   }
@@ -51,5 +53,41 @@ class Login {
 
 
 }
+class Data {
+    async getLivecount {
+        var countPaslon1 = 0;
+        var countPaslon2 = 0;
+        var voter = [];
+        io.on('connection', function (socket) {
 
+
+            var Paslon1;
+            var Paslon2;
+            if (!voter.(Paslon1)) {
+          
+               voter[$Paslon1] = 1;
+          
+               countPaslon1++;
+          
+                socket.emit('Paslon 1', {countPaslon1:countPaslon1});
+          
+            }
+            if (!voter.(Paslon2)) {
+          
+                voter[$Paslon2] = 1;
+           
+                countPaslon2++;
+           
+                socket.emit('Paslon 2', {countPaslon2:countPaslon2});
+           
+             }
+          
+            console.log("client is connected");
+          
+          
+          
+        });
+    }
+}
 module.exports = Login;
+module.exports = Data;
